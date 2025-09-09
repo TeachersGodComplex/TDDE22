@@ -73,23 +73,56 @@ public class SymbolTable {
     /**
      * Insert the key-value pair into the symbol table.
      * TODO: implement the put method.
+     * 
+     * Placera key på dess hashade index. 
+     * Placera val på motsvarandde index 
+     * 
      */
     public void put(String key, Character val) {
-	return;
-    } 
+        index = v;
+        while keys[index] != null {
+            if keys[index].equals(key) {
+            vals[index] = val; // Uppdaterar värdet 
+            break
+            
+            else (index+1) % maxSize;  
+                return; 
+            }
+        }
+    keys[index] = key;
+    vals[index] = val;
+    size++;       
+    }
+	
 
     /**
      * Return the value associated with the given key, null if no such
      * value.
      * TODO: implement the get method.
+     * 
+     * Hämta val som är kopplat till key
+     * 
      */
     public Character get(String key) {
-	return null;
+        index = v; 
+        if key[index] == null
+            return null;
+            for (int i = 0; i < Size; i++) {   // Loopar igenom alla index för listan 
+                if keys[index].equal(key)
+                return vals[index]; // Om key matchar key på index returnera val på index 
+                // break???
+                else (index+1) % maxSize;        // I think I'll do a wraparound
+            }
+        return null;    // Nyckeln finns inte idiot 
     } 
 
     /**
      * Delete the key (and associated value) from the symbol table.
      * TODO: implement the delete method.
+     * 
+     * Ta bort key och tillhörande val
+     * Om key/val är i en indexkedja ska alla värden efter key/val i indexkedjan flyttas ett steg till vänster
+     * 
      */
     public void delete(String key) {
 	return;
